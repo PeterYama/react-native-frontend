@@ -24,11 +24,11 @@ export default [
         id: 4,
         name: 'Pete Kiwi',
         email: 'kiwipete@gemp.com',
-        avatarUrl: 'https://pixabay.com/illustrations/head-the-dummy-avatar-man-tie-659652/',
+        avatarUrl: 'https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png',
 
     },
     {
-        id: 1,
+        id: 5,
         name: 'Bilu Corn Akila',
         email: 'bcakila@gemp.com',
         avatarUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_960_720.png',
