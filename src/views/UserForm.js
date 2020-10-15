@@ -4,7 +4,7 @@ import UsersContext from '../context/UsersContext'
 
 export default ({route, navigation}) => {
     const [user,setUser] = useState(route.params ? route.params : {})
-    const { state, dispatch } = useContext(UsersContext)
+    const { dispatch } = useContext(UsersContext)
     function confirmUserDeletion(user) {
         Alert.alert('Delete user ' + route.params.name + ' ?', '', [
             {
@@ -16,13 +16,13 @@ export default ({route, navigation}) => {
                         // passing the information you want act upon
                         payload: user,
                     })
+                 navigation.goBack()
                 }
             },
             {
                 text: "No"
             }
         ])
-        navigation.goBack()
     }
 
     return (
@@ -52,6 +52,10 @@ export default ({route, navigation}) => {
             <Button
                 title="Save"
                 onPress={() => {
+                    dispatch({
+                        type: user.id ? 'updateUser' : 'createUser',
+                        payload: user,
+                    })
                     navigation.goBack()
                 }}
             />
@@ -61,7 +65,7 @@ export default ({route, navigation}) => {
                 color='#ff3838'
                 title="Delete"
                 size='medium'
-                onPress={confirmUserDeletion(user)}
+                onPress={() => confirmUserDeletion(user)}
             />
         </View>
     )
