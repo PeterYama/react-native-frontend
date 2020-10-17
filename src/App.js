@@ -5,6 +5,7 @@ import UserList from './views/UserList'
 import UserForm from './views/UserForm'
 import { Button, Icon } from 'react-native-elements'
 import { UsersProvider } from './context/UsersContext'
+import CameraView from './views/CameraView'
 
 const Stack = createStackNavigator()
 
@@ -13,7 +14,7 @@ export default props => {
         <UsersProvider>
             <NavigationContainer>
                 <Stack.Navigator 
-                initialRouteName="UserList"
+                initialRouteName="CameraView"
                 screenOptions={screenOptions}>
                     <Stack.Screen 
                         name="UserList" 
@@ -36,6 +37,13 @@ export default props => {
                         component={UserForm}
                         options={{
                             title:'Login Form'
+                        }}
+                    />
+                    <Stack.Screen 
+                        name="CameraView" 
+                        component={CameraView}
+                        options={{
+                            title:'CameraView'
                         }}
                     />
                 </Stack.Navigator>
